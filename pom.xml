@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>rafagao</groupId>
+    <artifactId>chatRoom</artifactId>
+    <packaging>pom</packaging>
+    <version>3.0-SNAPSHOT</version>
+    <!--子模块-->
+    <modules>
+        <module>foo</module>
+        <module>server</module>
+        <module>client</module>
+        <module>assembly</module>
+    </modules>
+
+    <!--自定义值-->
+    <properties>
+        <foo.version>3.0-SNAPSHOT</foo.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!--开发者-->
+    <developers>
+        <developer>
+            <name>rafa gao</name>
+            <email>1573807924@qq.com</email>
+        </developer>
+
+    </developers>
+
+    <!--版本锁定-->
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>rafagao</groupId>
+                <artifactId>foo</artifactId>
+                <version>${foo.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <!--依赖的包-->
+    <dependencies>
+
+    </dependencies>
+
+
+    <build>
+        <!-- 打包后的启动jar名称 -->
+        <finalName>${project.parent.artifactId}-${project.artifactId}-${project.version}</finalName>
+        <!--<resources>-->
+            <!--<resource>-->
+            <!--</resource>-->
+        <!--</resources>-->
+
+        <plugins>
+            <plugin>
+                <!--编译插件-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+
+
+
+
+
+        </plugins>
+    </build>
+
+
+</project>

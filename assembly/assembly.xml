@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+
+    <id>${project.version}</id>
+
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <baseDirectory>${project.parent.groupId}-${project.artifactId}-${project.version}</baseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>../</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>bin</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+    <moduleSets>
+        <moduleSet>
+            <includes>
+                <include>chatRoom:client</include>
+                <include>chatRoom:server</include>
+            </includes>
+        </moduleSet>
+    </moduleSets>
+</assembly>
